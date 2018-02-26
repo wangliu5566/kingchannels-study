@@ -1,0 +1,616 @@
+//首页样式
+@fs:0.28rem;
+//预设样式
+@primary:#03ace8;
+@info:#00698b;
+
+
+// 预设类
+.pr() {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.pa(@left,@top) {
+	position: absolute;
+	left: @left;
+	top: @top;
+}
+
+.pf() {
+	position: fixed;
+   	bottom: 0;
+   	left: 0;
+}
+
+.mc() {
+	margin: 0 auto;
+}
+
+.flex(@arrow) {
+    display: flex;
+ 	justify-content: @arrow;
+ 	align-items: center;
+}
+
+
+.flex-center() {
+    display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+}
+
+.text-ess(@linenum) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: @linenum;
+	overflow: hidden;
+}
+
+.m-swipe {
+	height: 3rem;
+	width: 100%;
+	.m-swipe-content {
+		width: 100%;
+		height: 100%;
+	}
+
+
+	.mint-swipe-indicators {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		left: 90%;
+		bottom: 0.1rem;
+		width: 1.4rem;
+
+		.mint-swipe-indicator {
+			width: 0.28rem;
+			height: 0.28rem;
+			background: transparent;
+			box-sizing: border-box;
+			border: 0.05rem solid white;
+			opacity: 1;
+			margin: 0 0.04rem;
+		}
+
+		.is-active {
+			background: white;
+		}
+	}
+}
+
+
+.m-section {
+	// .flex-center();
+    .flex(flexStart); 
+	height: 0.6rem;
+	width: 100%;
+	.m-section-cont {
+		.flex(flexStart);
+		.pr();
+        .text-ess(1);
+        white-space: nowrap;
+		width: 7.4rem;
+		height: 0.46rem;
+		box-sizing: border-box;
+		border-left: 0.07rem solid @primary;
+		b {
+			margin-left: 0.05rem;
+			font-size: 0.34rem;
+			font-weight: normal;
+		}
+
+		span {
+			display: inline-block;
+			margin: 0.1rem 0 0 0.15rem;
+			font-size: 0.22rem;
+			color:#c5c5c5;
+		}
+
+		i {
+			font-style: normal;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1.5rem;
+			height: 100%;
+			line-height: 0.46rem;
+			font-size: 0.22rem;
+			text-align: center;
+			background: @primary;
+			color:white;
+		}
+
+        .m-bread-nav {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            line-height: 0.55rem;
+            color:#c5c5c5;
+        }
+	}
+}
+
+
+.m-section-filter {
+    .flex(flex-start);
+    width: 100%;
+    height: 0.45rem;
+    font-size: 0.24rem;
+    border-bottom: 1px solid @info;
+    li {
+        // padding-left:0.15rem;
+        // padding-right: 0.15rem;
+        padding: 0.02rem 0.15rem;
+    }
+
+    .m-section-filter-active {
+        color:@primary;
+        box-sizing: border-box;
+        border-bottom: 1px solid @primary;
+    }
+}
+
+.m-papagation {
+        .flex(flex-end);
+        width: 100%;
+        height: 0.5rem;
+        ul {
+           .flex(flex-start);
+           li {
+            .flex-center();
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-right: 0.07rem;
+            color:white;
+            background: #bdbdbd;
+           }
+        }
+
+        .pag-active {
+            background: #000;
+        }
+
+    }
+
+
+.m-hot-schools-nodata {
+    .flex-center();
+    width: 100%;
+    height: 100%;
+
+}
+
+.m-study-yiyi {
+	.mc();
+	height: 7.6rem;
+	width: 6.76rem;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+.m-study-new-act {
+	.flex(space-between);
+    height: 0.4rem;
+    width: 100%;
+    background: @info;
+    color:white;
+    padding: 0 0.1rem;
+
+    &> span {
+        .flex(flex-start);
+    }
+}
+
+.m-study-new-act-rect {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    margin: 0 0.2rem 0 0.1rem;
+    transform: rotate(45deg);
+    // margin-top: 0.1rem;
+    background: white;
+    box-sizing: border-box;
+}
+
+.m-study-new-act-fillrect {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    margin: 0 0.05rem 0 0.1rem;
+    transform: rotate(45deg);
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+.m-study-new-act-noimg {
+    .mc();
+    height: auto;
+	min-height: 1.15rem;
+	width: 7.3rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #999;
+
+    h3 {
+    	height: 0.43rem;
+    	line-height: 0.5rem;
+        font-size: .26rem;
+    }
+
+    p {
+    	.pr();
+    	.text-ess(4);
+		line-height: 0.32rem;
+        font-size: .22rem;
+    }
+
+    span {
+        position: absolute;
+        right: 0;
+        bottom: -0.03rem;
+    	color:red;
+    	text-decoration: underline;
+    	background: white;
+    }
+
+    i {
+    	position: absolute;
+        right: 0.82rem;
+        bottom: -0.02rem;
+        width: 1.7rem;
+        background: white;
+    }
+}
+
+
+
+.m-study-new-act-hasimg {
+	.mc();
+	margin-top: 0.2rem;
+	.flex(space-between);
+	height: 2.04rem;
+	width: 7.3rem;
+	figure {
+		width: 3.03rem;
+		height: 100%;
+		img {
+			width: 100%;
+		    height: 100%;
+		}
+	}
+
+	section {
+		width: 4.03rem;
+        height: 100%;
+        h3 {
+        	.flex(space-between);
+        	width: 100%;
+            font-weight: 400;
+            padding-bottom: 0.05rem;
+            font-size: 0.22rem;
+            line-height: 0.24rem;
+            border-bottom: 1px solid #999;
+            i {
+            	font-style: normal;
+            	color:red;
+            	margin-top: 0.02rem
+            }
+        }
+
+        p {
+        	height: 1.4rem;
+        	margin-top: 0.15rem;
+	    	.text-ess(5);
+			line-height: 0.28rem;
+			font-size: 0.22rem;
+        }
+	}
+}
+
+
+
+.m-study-prefecture {
+	display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .mc();
+    width: 7.3rem;
+    height: auto;
+    min-height: 0.5rem;
+
+    li {
+    	width: 3.55rem;
+    	height: 5.45rem;
+    	margin-top: 0.23rem;
+    	figure {
+    		.pr();
+    		height: 3.77rem;
+    		img {
+    			width: 100%;
+    			height: 100%;
+    		}
+            div {
+            	position: absolute;
+            	left: 0;
+            	bottom: 0;
+            	width: 100%;
+            	height: 0.4rem;
+            	line-height: 0.4rem;
+            	text-align: center;
+            	background: #eee;
+            	opacity: 0.8;
+            }
+
+    	}
+
+    	h3 {
+        	.flex(space-between);
+        	margin-top: 0.1rem;
+        	width: 100%;
+            font-weight: 400;
+            padding-bottom: 0.05rem;
+            font-size: 0.22rem;
+            line-height: 0.24rem;
+            border-bottom: 1px solid #999;
+            i {
+            	font-style: normal;
+            	color:red;
+            	margin-top: 0.02rem
+            }
+        }
+
+
+        p {
+           height: 1.13rem;
+           line-height: 0.3rem;
+           font-size: 0.2rem;
+           margin-top: 0.1rem;
+           .text-ess(4);
+        }
+    }
+}
+
+//热门院校
+.m-hot-schools {
+	display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .mc();
+    width: 7.3rem;
+    height: auto;
+    min-height: 0.5rem;
+
+    li {
+    	.flex(space-between);
+    	height: 1.1rem;
+    	width: 3.55rem;
+    	margin-bottom: 0.1rem;
+    	figure {
+            .pr();
+    		width: 1.64rem;
+    		height: 100%;
+    		margin-right: 0.1rem;
+    		img {
+    			width: 100%;
+    			height: 100%;
+                &:nth-of-type(1) {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+    		}
+    	}
+
+    	section {
+    		width: 1.8rem;
+    		height: 1.1rem;
+    		h3 {
+    			font-size: 0.26rem;
+    			line-height: 0.28rem;
+    			font-weight: 400;
+    			.text-ess(1);
+    		}
+
+    		p {
+    			.text-ess(2);
+    			font-size: 0.2rem;
+                height: 0.48rem;
+
+    			span {
+    				font-size: 0.24rem;
+    				padding: 0.02rem 0.1rem ;
+    				background: #bbb;
+    				color:white
+    			}
+    		}
+
+    		p:nth-of-type(1) {
+    			line-height: 0.24rem;
+    		}
+    	}
+    }
+}
+
+
+.m-schools-top {
+	.flex(flex-start);
+	align-items: flex-start;
+	margin-top: 0.2rem;
+    // .mc();
+    // width: 7.3rem;
+    height: auto;
+    min-height: 1.23rem;
+
+    .m-schools-top-type {
+    	// text-align: center;
+    	height: 1.23rem;
+    	line-height: 1.23rem;
+    	width: 2.7rem;
+    	font-size: 0.31rem;
+    	margin-left: 0.1rem;
+    	.text-ess(1);
+    	white-space: nowrap;
+    	span {
+    		font-size: 0.2rem;
+    	}
+    }
+
+    .m-schools-top-list {
+    	width: 4.7rem;
+    	height: auto;
+    	padding-left: 0.1rem;
+    	min-height: 1.23rem;
+    	box-sizing: border-box;
+    	border-left: 0.03rem solid @primary;
+
+    	.flex(flex-start);
+    	flex-wrap: wrap;
+    	li {
+    		margin:0 0.07rem 0.07rem 0;
+    		background: #d8d8d8;
+    		border: 1px solid #ccc;
+    		border-radius: 0.05rem;
+    		padding: 0.05rem;
+    	}
+    }
+
+    .m-hot-active {
+      background: #f6b554 !important;
+      border: 1px solid #f79a00;
+    }
+}
+
+
+//公司能力
+.m-company-power {
+    .mc();
+    width: 7.3rem;
+    height: auto;
+    min-height: 1.23rem;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    li {
+        .pr();
+    }
+    .m-company-power-section1 {
+        .flex(space-between);
+        height: 4.7rem;
+        width: 100%;
+        .m-company-power-section1-left {
+            width: 3.2rem;
+            height: 100%;
+            li {
+                height: 1.5rem;
+                box-sizing: border-box;
+                border: 0.01rem solid #000;
+                margin-bottom: 0.1rem;
+            }
+        }
+
+        .m-company-power-section1-right {
+            width: 4rem;
+            height: 100%;
+            li {
+                box-sizing: border-box;
+                border: 0.01rem solid #000;
+                margin-bottom: 0.1rem;
+            }
+
+            li:nth-of-type(1) {
+                height: 1.75rem;
+            }
+
+            li:nth-of-type(2) {
+                height: 2.85rem;
+            }
+        }
+
+    }
+
+
+    .m-company-power-section2 {
+        .flex(space-between);
+        height: 4.7rem;
+        width: 100%;
+        margin-top: 0.1rem;
+
+        .m-company-power-section2-left {
+            .pr();
+            width: 4rem;
+            height: 100%;
+            box-sizing: border-box;
+            border: 0.01rem solid #000;
+        }
+
+        .m-company-power-section2-right {
+            width: 3.2rem;
+            height: 100%;
+            li {
+                box-sizing: border-box;
+                border: 0.01rem solid #000;
+                margin-bottom: 0.1rem;
+            }
+
+            li:nth-of-type(1) {
+                height: 1.75rem;
+            }
+
+            li:nth-of-type(2) {
+                height: 2.85rem;
+            }
+        }
+    }
+
+    .m-company-power-section3 {
+        .flex(space-between);
+        margin: 0.1rem 0;
+        height: 2.85rem;
+        width: 100%;
+        li {
+            width: 3.6rem;
+            height: 100%;
+            box-sizing: border-box;
+            border: 0.01rem solid #000;
+            margin: 0.1rem 0;
+        }
+    }
+
+
+    .m-item-metion {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0.4rem;
+        width: 100%;
+        background: #000;
+        opacity: 0.6;
+        text-align: center;
+        line-height: 0.4rem;
+        color: white;
+        font-size: 0.26rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
